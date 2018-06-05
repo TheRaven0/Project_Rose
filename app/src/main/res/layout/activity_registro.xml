@@ -7,70 +7,52 @@
     tools:context=".RegistroActivity"
     android:orientation="vertical">
 
-    <android.support.v4.widget.Space
-        android:layout_width="match_parent"
-        android:layout_height="70dp" />
-
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Nombre de usuario"
         android:textSize="20sp"
-        android:layout_gravity="center_horizontal"/>
-
-    <android.support.v4.widget.Space
-        android:layout_width="match_parent"
-        android:layout_height="15dp" />
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="70dp"/>
 
     <EditText
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:hint="Usuario"
         android:layout_gravity="center_horizontal"
-        android:id="@+id/registro_username"/>
-
-    <android.support.v4.widget.Space
-        android:layout_width="match_parent"
-        android:layout_height="50dp" />
+        android:id="@+id/registro_username"
+        android:layout_marginTop="15dp"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Contraseña"
+        android:text="Defina su contraseña"
         android:textSize="20sp"
-        android:layout_gravity="center_horizontal"/>
-
-    <android.support.v4.widget.Space
-        android:layout_width="match_parent"
-        android:layout_height="15dp" />
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="45dp"/>
 
     <EditText
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:hint="Contraseña"
         android:layout_gravity="center_horizontal"
-        android:id="@+id/registro_password"/>
-
-    <android.support.v4.widget.Space
-        android:layout_width="match_parent"
-        android:layout_height="50dp" />
+        android:id="@+id/registro_password"
+        android:layout_marginTop="15dp"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Confirme la contraseña"
         android:textSize="20sp"
-        android:layout_gravity="center_horizontal"/>
-
-    <android.support.v4.widget.Space
-        android:layout_width="match_parent"
-        android:layout_height="15dp" />
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="45dp"/>
 
     <EditText
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:hint="Confirmar contraseña"
         android:layout_gravity="center_horizontal"
-        android:id="@+id/registro_confirmacion_password"/>
+        android:id="@+id/registro_confirmacion_password"
+        android:layout_marginTop="15dp"/>
 
 </LinearLayout>
