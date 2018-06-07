@@ -17,7 +17,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".InicioDeSesionActivity" />
-        <activity android:name=".RegistroActivity"></activity>
+        <activity android:name=".RegistroActivity" />
+        <activity android:name=".historial"></activity>
     </application>
 
 </manifest>
