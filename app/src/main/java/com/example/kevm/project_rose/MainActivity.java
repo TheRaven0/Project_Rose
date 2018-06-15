@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 import com.example.kevm.project_rose.fragmentos.NuevoFragment;
@@ -17,6 +18,9 @@ import com.example.kevm.project_rose.fragmentos.RecomendadoFragment;
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
     private DrawerLayout mDrawerLayout;
     private ActionBarDrawerToggle mToggle;
+    /*Button boton1 = (Button)findViewById(R.id.botonUno);
+    Button boton2 = (Button)findViewById(R.id.botonDos);
+    Button boton3 = (Button)findViewById(R.id.botonTres);*/
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,21 +34,23 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         mToggle.syncState();
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        NuevoFragment fr = new NuevoFragment();
+        PrincipalFragment fr = new PrincipalFragment();
         getSupportFragmentManager().beginTransaction().replace(R.id.Contenido,fr).commit();
 
-        //NavigationView navigationView = (NavigationView)findViewById(R.id.)
+        NavigationView navigationView = (NavigationView)findViewById(R.id.navigationView);
+        navigationView.setNavigationItemSelectedListener(this);
 
     }
 
     public void uno (View v)
     {
-        NuevoFragment fr = new NuevoFragment();
+        PrincipalFragment fr = new PrincipalFragment();
         getSupportFragmentManager().beginTransaction().replace(R.id.Contenido,fr).commit();
+
     }
     public void dos (View v)
     {
-        PrincipalFragment fr = new PrincipalFragment();
+        NuevoFragment fr = new NuevoFragment();
         getSupportFragmentManager().beginTransaction().replace(R.id.Contenido,fr).commit();
     }
     public void tres (View v)
@@ -72,12 +78,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         if(id == R.id.Categorias)
         {
-            Toast.makeText(this, "Home", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Categorías", Toast.LENGTH_SHORT).show();
         }
 
-        if(id == R.id.historial)
+        if(id == R.id.Historial)
         {
-            Toast.makeText(this, "historial", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Historial", Toast.LENGTH_SHORT).show();
         }
 
         if(id== R.id.About)
