@@ -1,12 +1,20 @@
 package com.example.kevm.project_rose;
 
+import android.support.annotation.NonNull;
+import android.support.design.widget.NavigationView;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
+import com.example.kevm.project_rose.fragmentos.NuevoFragment;
+import com.example.kevm.project_rose.fragmentos.PrincipalFragment;
+import com.example.kevm.project_rose.fragmentos.RecomendadoFragment;
+
+public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
     private DrawerLayout mDrawerLayout;
     private ActionBarDrawerToggle mToggle;
 
@@ -21,6 +29,28 @@ public class MainActivity extends AppCompatActivity {
         mDrawerLayout.addDrawerListener(mToggle);
         mToggle.syncState();
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        NuevoFragment fr = new NuevoFragment();
+        getSupportFragmentManager().beginTransaction().replace(R.id.Contenido,fr).commit();
+
+        //NavigationView navigationView = (NavigationView)findViewById(R.id.)
+
+    }
+
+    public void uno (View v)
+    {
+        NuevoFragment fr = new NuevoFragment();
+        getSupportFragmentManager().beginTransaction().replace(R.id.Contenido,fr).commit();
+    }
+    public void dos (View v)
+    {
+        PrincipalFragment fr = new PrincipalFragment();
+        getSupportFragmentManager().beginTransaction().replace(R.id.Contenido,fr).commit();
+    }
+    public void tres (View v)
+    {
+        RecomendadoFragment fr = new RecomendadoFragment();
+        getSupportFragmentManager().beginTransaction().replace(R.id.Contenido,fr).commit();
     }
 
     @Override
@@ -29,5 +59,36 @@ public class MainActivity extends AppCompatActivity {
             return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        int id = item.getItemId();
+
+        if(id == R.id.Home)
+        {
+            Toast.makeText(this, "Home", Toast.LENGTH_SHORT).show();
+        }
+
+        if(id == R.id.Categorias)
+        {
+            Toast.makeText(this, "Home", Toast.LENGTH_SHORT).show();
+        }
+
+        if(id == R.id.historial)
+        {
+            Toast.makeText(this, "historial", Toast.LENGTH_SHORT).show();
+        }
+
+        if(id== R.id.About)
+        {
+            Toast.makeText(this, "Acerca de", Toast.LENGTH_SHORT).show();
+        }
+
+        if(id == R.id.Logout)
+        {
+            Toast.makeText(this, "Salir", Toast.LENGTH_SHORT).show();
+        }
+        return false;
     }
 }
