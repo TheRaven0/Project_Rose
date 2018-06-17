@@ -5,6 +5,8 @@ import android.os.Bundle;
 
 public class catalogo extends AppCompatActivity {
 
+    String categoria;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
