@@ -1,6 +1,7 @@
 package com.example.kevm.project_rose;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
@@ -133,7 +134,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         if(id == R.id.Logout)
         {
-            Toast.makeText(this, "Salir", Toast.LENGTH_SHORT).show();
+            SharedPreferences preferences = getSharedPreferences("user_data", Context.MODE_PRIVATE);
+            preferences.edit().putString("Usuario", "no hay").apply();
+            Intent inicioSesion =  new Intent(MainActivity.this, InicioDeSesionActivity.class);
+            startActivity(inicioSesion);
+            finish();
         }
         return false;
     }

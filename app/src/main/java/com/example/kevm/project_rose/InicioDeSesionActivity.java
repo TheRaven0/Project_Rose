@@ -52,6 +52,7 @@ public class InicioDeSesionActivity extends AppCompatActivity implements View.On
 
                     Intent Main = new Intent(InicioDeSesionActivity.this, MainActivity.class);
                     startActivity(Main);
+                    finish();
                 }
                 else if(usuario.getText().toString().isEmpty()) Toast.makeText(this, "El Usuario está vacío", Toast.LENGTH_SHORT).show();
                 else Toast.makeText(this, "Datos incorrectos", Toast.LENGTH_SHORT).show();

@@ -1,4 +1,4 @@
-package com.example.kevm.project_rose;
+/*package com.example.kevm.project_rose;
 
 import android.app.DownloadManager;
 import android.content.Intent;
@@ -96,3 +96,4 @@ public class catalogo extends AppCompatActivity {
         }
     }
 }
+*/
