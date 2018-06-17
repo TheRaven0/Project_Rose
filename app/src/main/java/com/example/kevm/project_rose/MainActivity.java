@@ -98,37 +98,50 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         if(id == R.id.Drama)
         {
-            Toast.makeText(this, "Drama", Toast.LENGTH_SHORT).show();
+            Intent categoria = new Intent(MainActivity.this, catalogo.class);
+            categoria.putExtra("nombre_categoria", "drama");
+            startActivity(categoria);
         }
 
         if(id== R.id.Accion)
         {
-            Toast.makeText(this, "Accion", Toast.LENGTH_SHORT).show();
+            Intent categoria = new Intent(MainActivity.this, catalogo.class);
+            categoria.putExtra("nombre_categoria", "accion");
+            startActivity(categoria);
         }
 
         if(id== R.id.Terror)
         {
-            Toast.makeText(this, "Terror", Toast.LENGTH_SHORT).show();
+            Intent categoria = new Intent(MainActivity.this, catalogo.class);
+            categoria.putExtra("nombre_categoria", "terror");
+            startActivity(categoria);
         }
 
         if(id== R.id.Thriller)
         {
-            Toast.makeText(this, "Thriller", Toast.LENGTH_SHORT).show();
+            Intent categoria = new Intent(MainActivity.this, catalogo.class);
+            categoria.putExtra("nombre_categoria", "thriller");
+            startActivity(categoria);
         }
 
         if(id== R.id.Comedia)
         {
-            Toast.makeText(this, "Comedia", Toast.LENGTH_SHORT).show();
+            Intent categoria = new Intent(MainActivity.this, catalogo.class);
+            categoria.putExtra("nombre_categoria", "comedia");
+            startActivity(categoria);
         }
 
         if(id== R.id.CienciaFiccion)
         {
-            Toast.makeText(this, "Ciencia ficción", Toast.LENGTH_SHORT).show();
+            Intent categoria = new Intent(MainActivity.this, catalogo.class);
+            categoria.putExtra("nombre_categoria", "ciencia ficcion");
+            startActivity(categoria);
         }
 
         if(id == R.id.Historial)
         {
-            Toast.makeText(this, "Historial", Toast.LENGTH_SHORT).show();
+            Intent historial = new Intent(MainActivity.this, historial.class);
+            startActivity(historial);
         }
 
 
