@@ -55,4 +55,12 @@
         android:id="@+id/registro_confirmacion_password"
         android:layout_marginTop="15dp"/>
 
+    <Button
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:textSize="20sp"
+        android:text="registro"
+        android:id="@+id/registro_confirmacion"/>
+
 </LinearLayout>

@@ -1,22 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:id="@+id/Home"
-        android:title="Home">
+        android:title="  Home">
     </item>
 
-    <item android:id="@+id/Categorias"
-        android:title="Categorías">
+    <item android:id="@+id/Drama"
+        android:title="  Drama">
+    </item>
+
+    <item android:id="@+id/Accion"
+        android:title="  Acción">
+    </item>
+
+    <item android:id="@+id/Terror"
+        android:title="  Terror">
+    </item>
+
+    <item android:id="@+id/Thriller"
+        android:title="  Thriller">
+    </item>
+
+    <item android:id="@+id/Comedia"
+        android:title="  Comedia">
+    </item>
+
+    <item android:id="@+id/CienciaFiccion"
+        android:title="  Ciencia ficcion">
     </item>
 
     <item android:id="@+id/Historial"
-        android:title="Historial">
-    </item>
-
-    <item android:id="@+id/About"
-        android:title="Acerca de">
+        android:title="  Historial">
     </item>
 
     <item android:id="@+id/Logout"
-        android:title="Salir">
+        android:title="  Salir">
     </item>
 </menu>

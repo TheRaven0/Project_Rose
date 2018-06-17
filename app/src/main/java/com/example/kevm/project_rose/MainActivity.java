@@ -18,14 +18,17 @@ import com.example.kevm.project_rose.fragmentos.RecomendadoFragment;
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
     private DrawerLayout mDrawerLayout;
     private ActionBarDrawerToggle mToggle;
-    /*Button boton1 = (Button)findViewById(R.id.botonUno);
-    Button boton2 = (Button)findViewById(R.id.botonDos);
-    Button boton3 = (Button)findViewById(R.id.botonTres);*/
+
+    Button boton1, boton2, boton3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        boton1 = (Button)findViewById(R.id.botonUno);
+        boton2 = (Button)findViewById(R.id.botonDos);
+        boton3 = (Button)findViewById(R.id.botonTres);
 
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer);
         mToggle = new ActionBarDrawerToggle(MainActivity.this, mDrawerLayout, R.string.open, R.string.close);
@@ -36,6 +39,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         PrincipalFragment fr = new PrincipalFragment();
         getSupportFragmentManager().beginTransaction().replace(R.id.Contenido,fr).commit();
+        boton1.setTextColor(getResources().getColor(R.color.colorAccent));
 
         NavigationView navigationView = (NavigationView)findViewById(R.id.navigationView);
         navigationView.setNavigationItemSelectedListener(this);
@@ -46,17 +50,26 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     {
         PrincipalFragment fr = new PrincipalFragment();
         getSupportFragmentManager().beginTransaction().replace(R.id.Contenido,fr).commit();
+        boton1.setTextColor(getResources().getColor(R.color.colorAccent));
+        boton2.setTextColor(getResources().getColor(R.color.white));
+        boton3.setTextColor(getResources().getColor(R.color.white));
 
     }
     public void dos (View v)
     {
         NuevoFragment fr = new NuevoFragment();
         getSupportFragmentManager().beginTransaction().replace(R.id.Contenido,fr).commit();
+        boton1.setTextColor(getResources().getColor(R.color.white));
+        boton2.setTextColor(getResources().getColor(R.color.colorAccent));
+        boton3.setTextColor(getResources().getColor(R.color.white));
     }
     public void tres (View v)
     {
         RecomendadoFragment fr = new RecomendadoFragment();
         getSupportFragmentManager().beginTransaction().replace(R.id.Contenido,fr).commit();
+        boton1.setTextColor(getResources().getColor(R.color.white));
+        boton2.setTextColor(getResources().getColor(R.color.white));
+        boton3.setTextColor(getResources().getColor(R.color.colorAccent));
     }
 
     @Override
@@ -76,9 +89,34 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             Toast.makeText(this, "Home", Toast.LENGTH_SHORT).show();
         }
 
-        if(id == R.id.Categorias)
+        if(id == R.id.Drama)
         {
-            Toast.makeText(this, "Categorías", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Drama", Toast.LENGTH_SHORT).show();
+        }
+
+        if(id== R.id.Accion)
+        {
+            Toast.makeText(this, "Accion", Toast.LENGTH_SHORT).show();
+        }
+
+        if(id== R.id.Terror)
+        {
+            Toast.makeText(this, "Terror", Toast.LENGTH_SHORT).show();
+        }
+
+        if(id== R.id.Thriller)
+        {
+            Toast.makeText(this, "Thriller", Toast.LENGTH_SHORT).show();
+        }
+
+        if(id== R.id.Comedia)
+        {
+            Toast.makeText(this, "Comedia", Toast.LENGTH_SHORT).show();
+        }
+
+        if(id== R.id.CienciaFiccion)
+        {
+            Toast.makeText(this, "Ciencia ficción", Toast.LENGTH_SHORT).show();
         }
 
         if(id == R.id.Historial)
@@ -86,10 +124,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             Toast.makeText(this, "Historial", Toast.LENGTH_SHORT).show();
         }
 
-        if(id== R.id.About)
-        {
-            Toast.makeText(this, "Acerca de", Toast.LENGTH_SHORT).show();
-        }
 
         if(id == R.id.Logout)
         {
