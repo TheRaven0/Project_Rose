@@ -1,5 +1,7 @@
 package com.example.kevm.project_rose;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.v4.widget.DrawerLayout;
@@ -20,6 +22,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private ActionBarDrawerToggle mToggle;
 
     Button boton1, boton2, boton3;
+    String usuario;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +46,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         NavigationView navigationView = (NavigationView)findViewById(R.id.navigationView);
         navigationView.setNavigationItemSelectedListener(this);
+
+        usuario = getFromSharedPreferences();
+        Toast.makeText(this, "Usuario actual " + usuario, Toast.LENGTH_SHORT).show();
 
     }
 
@@ -130,5 +136,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             Toast.makeText(this, "Salir", Toast.LENGTH_SHORT).show();
         }
         return false;
+    }
+
+    private String getFromSharedPreferences(){
+        SharedPreferences preferences = getSharedPreferences("user_data", Context.MODE_PRIVATE);
+        return preferences.getString("Usuario", "no hay");
     }
 }
