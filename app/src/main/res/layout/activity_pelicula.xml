@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout  xmlns:android="http://schemas.android.com/apk/res/android"
+android:layout_height="wrap_content"
+android:layout_width="match_parent"
+android:orientation="horizontal"
+android:id="@+id/historial">
+<ImageView
+    android:layout_width="120dp"
+    android:layout_height="175dp"
+    android:src="@drawable/amelia"
+    android:id="@+id/poster"
+    android:layout_centerHorizontal="true"
+    />
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_centerHorizontal="true"
+    android:layout_below="@id/poster">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Titulo"
+        android:id="@+id/titulo"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Año"
+        android:id="@+id/año"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Reparto"
+        android:id="@+id/reparto"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Sinopsis"
+        android:id="@+id/sinopsis"/>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+        <Button
+            android:layout_width="200dp"
+            android:layout_height="80dp"
+            android:text="ver ahora"
+            android:id="@+id/VerA"
+            />
+        <Button
+            android:layout_width="200dp"
+            android:layout_height="80dp"
+            android:text="ver mas tarde"
+            android:id="@+id/VerM"
+            />
+    </LinearLayout>
+</LinearLayout>
+
+</RelativeLayout>
