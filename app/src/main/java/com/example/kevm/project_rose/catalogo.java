@@ -58,10 +58,10 @@ public class catalogo extends AppCompatActivity {
                             {
                                 try {
                                     pelicula1.setText("" + response.getJSONObject(0).getInt("nombre1"));
-                                    pelicula2.setText("" + response.getJSONObject(0).getInt("nombre2"));
-                                    pelicula3.setText("" + response.getJSONObject(0).getInt("nombre3"));
-                                    pelicula4.setText("" + response.getJSONObject(0).getInt("nombre4"));
-                                    pelicula5.setText("" + response.getJSONObject(0).getInt("nombre5"));
+                                    pelicula2.setText("" + response.getJSONObject(1).getInt("nombre2"));
+                                    pelicula3.setText("" + response.getJSONObject(2).getInt("nombre3"));
+                                    pelicula4.setText("" + response.getJSONObject(3).getInt("nombre4"));
+                                    pelicula5.setText("" + response.getJSONObject(4).getInt("nombre5"));
 
 
                                 } catch (JSONException e) {
