@@ -20,6 +20,7 @@ import com.android.volley.toolbox.Volley;
 import org.json.JSONArray;
 import org.json.JSONException;
 
+
 public class catalogo extends AppCompatActivity {
 
     String categoria;
@@ -31,6 +32,10 @@ public class catalogo extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_catalogo);
+
+        Intent receive = getIntent();
+        categoria = receive.getStringExtra("nombre_categoria");
+
         pelicula1= (TextView) findViewById (R.id.pelicula1);
         pelicula2= (TextView) findViewById (R.id.pelicula2);
         pelicula3= (TextView) findViewById (R.id.pelicula3);

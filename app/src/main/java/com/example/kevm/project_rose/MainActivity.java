@@ -1,5 +1,8 @@
 package com.example.kevm.project_rose;
 
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.v4.widget.DrawerLayout;
@@ -20,6 +23,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private ActionBarDrawerToggle mToggle;
 
     Button boton1, boton2, boton3;
+    String usuario;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +47,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         NavigationView navigationView = (NavigationView)findViewById(R.id.navigationView);
         navigationView.setNavigationItemSelectedListener(this);
+
+        usuario = getFromSharedPreferences();
+        Toast.makeText(this, "Usuario actual " + usuario, Toast.LENGTH_SHORT).show();
 
     }
 
@@ -91,44 +98,66 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         if(id == R.id.Drama)
         {
-            Toast.makeText(this, "Drama", Toast.LENGTH_SHORT).show();
+            Intent categoria = new Intent(MainActivity.this, catalogo.class);
+            categoria.putExtra("nombre_categoria", "drama");
+            startActivity(categoria);
         }
 
         if(id== R.id.Accion)
         {
-            Toast.makeText(this, "Accion", Toast.LENGTH_SHORT).show();
+            Intent categoria = new Intent(MainActivity.this, catalogo.class);
+            categoria.putExtra("nombre_categoria", "accion");
+            startActivity(categoria);
         }
 
         if(id== R.id.Terror)
         {
-            Toast.makeText(this, "Terror", Toast.LENGTH_SHORT).show();
+            Intent categoria = new Intent(MainActivity.this, catalogo.class);
+            categoria.putExtra("nombre_categoria", "terror");
+            startActivity(categoria);
         }
 
         if(id== R.id.Thriller)
         {
-            Toast.makeText(this, "Thriller", Toast.LENGTH_SHORT).show();
+            Intent categoria = new Intent(MainActivity.this, catalogo.class);
+            categoria.putExtra("nombre_categoria", "thriller");
+            startActivity(categoria);
         }
 
         if(id== R.id.Comedia)
         {
-            Toast.makeText(this, "Comedia", Toast.LENGTH_SHORT).show();
+            Intent categoria = new Intent(MainActivity.this, catalogo.class);
+            categoria.putExtra("nombre_categoria", "comedia");
+            startActivity(categoria);
         }
 
         if(id== R.id.CienciaFiccion)
         {
-            Toast.makeText(this, "Ciencia ficción", Toast.LENGTH_SHORT).show();
+            Intent categoria = new Intent(MainActivity.this, catalogo.class);
+            categoria.putExtra("nombre_categoria", "ciencia ficcion");
+            startActivity(categoria);
         }
 
         if(id == R.id.Historial)
         {
-            Toast.makeText(this, "Historial", Toast.LENGTH_SHORT).show();
+            Intent historial = new Intent(MainActivity.this, historial.class);
+            startActivity(historial);
         }
 
 
         if(id == R.id.Logout)
         {
-            Toast.makeText(this, "Salir", Toast.LENGTH_SHORT).show();
+            SharedPreferences preferences = getSharedPreferences("user_data", Context.MODE_PRIVATE);
+            preferences.edit().putString("Usuario", "no hay").apply();
+            Intent inicioSesion =  new Intent(MainActivity.this, InicioDeSesionActivity.class);
+            startActivity(inicioSesion);
+            finish();
         }
         return false;
+    }
+
+    private String getFromSharedPreferences(){
+        SharedPreferences preferences = getSharedPreferences("user_data", Context.MODE_PRIVATE);
+        return preferences.getString("Usuario", "no hay");
     }
 }
