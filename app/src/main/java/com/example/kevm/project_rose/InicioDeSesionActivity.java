@@ -104,7 +104,7 @@ public class InicioDeSesionActivity extends AppCompatActivity implements View.On
         }
     }
 
-    public void saveLoginSharedPreferences(){
+    private void saveLoginSharedPreferences(){
         SharedPreferences sharpref = getSharedPreferences("user_data", Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharpref.edit();
         editor.putString("Usuario", usuario.getText().toString());
