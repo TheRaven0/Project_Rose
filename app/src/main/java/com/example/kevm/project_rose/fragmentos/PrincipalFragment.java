@@ -45,7 +45,7 @@ public class PrincipalFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         categoria=getActivity().getIntent().getStringExtra("nombre_categoria");
-
+        // me caga android studio alch
         pelicula1= getView().findViewById(R.id.pelicula1);
         pelicula2= getView().findViewById(R.id.pelicula2);
         pelicula3= getView().findViewById(R.id.pelicula3);
