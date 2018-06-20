@@ -45,7 +45,7 @@ public class catalogo extends AppCompatActivity {
 
         mainGrid = (GridLayout) findViewById(R.id.mainGrid);
         setSingleEvent(mainGrid);
-        String url  = "http://192.168.84.51/peliculas.php";
+        String url  = "http://192.168.84.51/catalogoV2.php?genero=" + categoria;
 
         JsonArrayRequest peticion = new JsonArrayRequest
                 (
@@ -59,35 +59,36 @@ public class catalogo extends AppCompatActivity {
                             {
                                 try {
                                     pelicula1.setText("" + response.getJSONObject(0).getString("Nombre1"));
-                                    pelicula2.setText("" + response.getJSONObject(11).getString("Nombre2"));
-                                    pelicula3.setText("" + response.getJSONObject(22).getString("Nombre3"));
-                                    pelicula4.setText("" + response.getJSONObject(33).getString("Nombre4"));
-                                    pelicula5.setText("" + response.getJSONObject(44).getString("Nombre5"));
+                                    pelicula2.setText("" + response.getJSONObject(1).getString("Nombre2"));
+                                    pelicula3.setText("" + response.getJSONObject(2).getString("Nombre3"));
+                                    pelicula4.setText("" + response.getJSONObject(3).getString("Nombre4"));
+                                    pelicula5.setText("" + response.getJSONObject(4).getString("Nombre5"));
 
-                                    peli1= (response.getJSONObject(1).getString("Nombre1"));
-                                    peli2= (response.getJSONObject(14).getString("Nombre2"));
-                                    peli3= (response.getJSONObject(27).getString("Nombre3"));
-                                    peli4= (response.getJSONObject(40).getString("Nombre4"));
-                                    peli5= (response.getJSONObject(53).getString("Nombre5"));
-                                    fecha1=(response.getJSONObject(5).getString("Fecha de estreno1"));
-                                    fecha2=(response.getJSONObject(18).getString("Fecha de estreno2"));
-                                    fecha3=(response.getJSONObject(31).getString("Fecha de estreno3"));
-                                    fecha4=(response.getJSONObject(44).getString("Fecha de estreno4"));
-                                    sinopsis1=(response.getJSONObject(3).getString("Sinopsis1"));
-                                    sinopsis2=(response.getJSONObject(16).getString("Sinopsis2"));
-                                    sinopsis3=(response.getJSONObject(29).getString("Sinopsis3"));
-                                    sinopsis4=(response.getJSONObject(42).getString("Sinopsis4"));
-                                    sinopsis5=(response.getJSONObject(55).getString("Sinopsis5"));
-                                    reparto1=(response.getJSONObject(4).getString("reparto1"));
-                                    reparto2=(response.getJSONObject(17).getString("reparto2"));
-                                    reparto3=(response.getJSONObject(30).getString("reparto3"));
-                                    reparto4=(response.getJSONObject(43).getString("reparto4"));
-                                    reparto5=(response.getJSONObject(56).getString("reparto5"));
+                                    peli1= (response.getJSONObject(0).getString("Nombre1"));
+                                    peli2= (response.getJSONObject(1).getString("Nombre2"));
+                                    peli3= (response.getJSONObject(2).getString("Nombre3"));
+                                    peli4= (response.getJSONObject(3).getString("Nombre4"));
+                                    peli5= (response.getJSONObject(4).getString("Nombre5"));
+                                    fecha1=(response.getJSONObject(0).getString("Fecha de estreno1"));
+                                    fecha2=(response.getJSONObject(1).getString("Fecha de estreno2"));
+                                    fecha3=(response.getJSONObject(2).getString("Fecha de estreno3"));
+                                    fecha4=(response.getJSONObject(3).getString("Fecha de estreno4"));
+                                    fecha5=(response.getJSONObject(4).getString("Fecha de estreno5"));
+                                    sinopsis1=(response.getJSONObject(0).getString("Sinopsis1"));
+                                    sinopsis2=(response.getJSONObject(1).getString("Sinopsis2"));
+                                    sinopsis3=(response.getJSONObject(2).getString("Sinopsis3"));
+                                    sinopsis4=(response.getJSONObject(3).getString("Sinopsis4"));
+                                    sinopsis5=(response.getJSONObject(4).getString("Sinopsis5"));
+                                    reparto1=(response.getJSONObject(0).getString("reparto1"));
+                                    reparto2=(response.getJSONObject(1).getString("reparto2"));
+                                    reparto3=(response.getJSONObject(2).getString("reparto3"));
+                                    reparto4=(response.getJSONObject(3).getString("reparto4"));
+                                    reparto5=(response.getJSONObject(4).getString("reparto5"));
                                     clave1=(response.getJSONObject(0).getString("Clave1"));
-                                    clave2=(response.getJSONObject(13).getString("Clave2"));
-                                    clave3=(response.getJSONObject(26).getString("Clave3"));
-                                    clave4=(response.getJSONObject(39).getString("Clave4"));
-                                    clave5=(response.getJSONObject(52).getString("Clave5"));
+                                    clave2=(response.getJSONObject(1).getString("Clave2"));
+                                    clave3=(response.getJSONObject(2).getString("Clave3"));
+                                    clave4=(response.getJSONObject(3).getString("Clave4"));
+                                    clave5=(response.getJSONObject(4).getString("Clave5"));
 
                                 } catch (JSONException e) {
                                     e.printStackTrace();
