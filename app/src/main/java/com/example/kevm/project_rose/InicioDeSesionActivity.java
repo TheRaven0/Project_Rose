@@ -53,7 +53,7 @@ public class InicioDeSesionActivity extends AppCompatActivity implements View.On
         switch (v.getId()){
             case R.id.ingresar:
 
-                String url = "http://192.168.84.51/password_request.php?usuario=" + usuario.getText().toString();
+                String url = "http://192.168.71.2/password_request.php?usuario=" + usuario.getText().toString();
 
                 JsonObjectRequest peticion = new JsonObjectRequest(
                         Request.Method.GET,
@@ -63,9 +63,8 @@ public class InicioDeSesionActivity extends AppCompatActivity implements View.On
                             @Override
                             public void onResponse(JSONObject response) {
                                 try {
-                                    BDpassword = "";
-                                    BDpassword.concat(response.getString("contraseña"));
-
+                                    BDpassword = response.getString("contrasena");
+                                    Toast.makeText(InicioDeSesionActivity.this, "" + BDpassword, Toast.LENGTH_SHORT).show();
                                 } catch (JSONException e) {
                                     e.printStackTrace();
                                 }

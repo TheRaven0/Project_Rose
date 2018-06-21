@@ -41,7 +41,7 @@ public class RegistroActivity extends AppCompatActivity implements View.OnClickL
         reg_mail = (EditText)findViewById(R.id.registro_mail);
         reg_contraseña = (EditText)findViewById(R.id.registro_password);
 
-        url = "http://192.168.84.51/password_request.php?usuario=" + reg_usuario.getText().toString()
+        url = "http://192.168.71.2/user_insert.php?usuario=" + reg_usuario.getText().toString()
                 + "&email=" + reg_mail.getText().toString() + "&contrasena=" + reg_contraseña.getText().toString();
     }
 
