@@ -133,45 +133,60 @@ public class DramaFragment extends Fragment {
                 @Override
                 public void onClick(View view){
                     if(finali==0) {
-                        Intent intent= new Intent (getActivity(), pelicula.class);
-                        intent.putExtra("nombre_pelicula", peli1);
-                        intent.putExtra("fecha", fecha1);
-                        intent.putExtra("sinopsis", sinopsis1);
-                        intent.putExtra("reparto", reparto1);
-                        intent.putExtra("clave", clave1);
-                        startActivity(intent);
+                        Toast.makeText(getContext(), "Pelicula seleccionada", Toast.LENGTH_SHORT).show();
+                        PeliculaFragment frag = new PeliculaFragment();
+                        Bundle bundle = new Bundle();
+                        bundle.putString("nombre_pelicula", peli1);
+                        bundle.putString("fecha", fecha1);
+                        bundle.putString("sinopsis", sinopsis1);
+                        bundle.putString("reparto", reparto1);
+                        bundle.putString("clave", clave1);
+                        frag.setArguments(bundle);
+                        getFragmentManager().beginTransaction().replace(R.id.Contenido,frag).commit();
                     }else if(finali==1) {
-                        Intent intent= new Intent (getActivity(), pelicula.class);
-                        intent.putExtra("nombre_pelicula", peli2);
-                        intent.putExtra("fecha", fecha2);
-                        intent.putExtra("sinopsis", sinopsis2);
-                        intent.putExtra("reparto", reparto2);
-                        intent.putExtra("clave", clave2);
-                        startActivity(intent);
+                        Toast.makeText(getContext(), "Pelicula seleccionada", Toast.LENGTH_SHORT).show();
+                        PeliculaFragment frag = new PeliculaFragment();
+                        Bundle bundle = new Bundle();
+                        bundle.putString("nombre_pelicula", peli2);
+                        bundle.putString("fecha", fecha2);
+                        bundle.putString("sinopsis", sinopsis2);
+                        bundle.putString("reparto", reparto2);
+                        bundle.putString("clave", clave2);
+                        frag.setArguments(bundle);
+                        getFragmentManager().beginTransaction().replace(R.id.Contenido,frag).commit();
                     }else if(finali==2) {
-                        Intent intent= new Intent (getActivity(), pelicula.class);
-                        intent.putExtra("nombre_pelicula", peli3);
-                        intent.putExtra("fecha", fecha3);
-                        intent.putExtra("sinopsis", sinopsis3);
-                        intent.putExtra("reparto", reparto3);
-                        intent.putExtra("clave", clave3);
-                        startActivity(intent);
+                        Toast.makeText(getContext(), "Pelicula seleccionada", Toast.LENGTH_SHORT).show();
+                        PeliculaFragment frag = new PeliculaFragment();
+                        Bundle bundle = new Bundle();
+                        bundle.putString("nombre_pelicula", peli3);
+                        bundle.putString("fecha", fecha3);
+                        bundle.putString("sinopsis", sinopsis3);
+                        bundle.putString("reparto", reparto3);
+                        bundle.putString("clave", clave3);
+                        frag.setArguments(bundle);
+                        getFragmentManager().beginTransaction().replace(R.id.Contenido,frag).commit();
                     }else if(finali==3) {
-                        Intent intent= new Intent (getActivity(), pelicula.class);
-                        intent.putExtra("nombre_pelicula", peli4);
-                        intent.putExtra("fecha", fecha4);
-                        intent.putExtra("sinopsis", sinopsis4);
-                        intent.putExtra("reparto", reparto4);
-                        intent.putExtra("clave", clave4);
-                        startActivity(intent);
+                        Toast.makeText(getContext(), "Pelicula seleccionada", Toast.LENGTH_SHORT).show();
+                        PeliculaFragment frag = new PeliculaFragment();
+                        Bundle bundle = new Bundle();
+                        bundle.putString("nombre_pelicula", peli4);
+                        bundle.putString("fecha", fecha4);
+                        bundle.putString("sinopsis", sinopsis4);
+                        bundle.putString("reparto", reparto4);
+                        bundle.putString("clave", clave4);
+                        frag.setArguments(bundle);
+                        getFragmentManager().beginTransaction().replace(R.id.Contenido,frag).commit();
                     }else if(finali==4) {
-                        Intent intent= new Intent (getActivity(), pelicula.class);
-                        intent.putExtra("nombre_pelicula", peli5);
-                        intent.putExtra("fecha", fecha5);
-                        intent.putExtra("sinopsis", sinopsis5);
-                        intent.putExtra("reparto", reparto5);
-                        intent.putExtra("clave", clave5);
-                        startActivity(intent);
+                        Toast.makeText(getContext(), "Pelicula seleccionada", Toast.LENGTH_SHORT).show();
+                        PeliculaFragment frag = new PeliculaFragment();
+                        Bundle bundle = new Bundle();
+                        bundle.putString("nombre_pelicula", peli5);
+                        bundle.putString("fecha", fecha5);
+                        bundle.putString("sinopsis", sinopsis5);
+                        bundle.putString("reparto", reparto5);
+                        bundle.putString("clave", clave5);
+                        frag.setArguments(bundle);
+                        getFragmentManager().beginTransaction().replace(R.id.Contenido,frag).commit();
                     }else{
                         Toast.makeText(getActivity(), "pelicula no disponible",Toast.LENGTH_SHORT).show();
                         }

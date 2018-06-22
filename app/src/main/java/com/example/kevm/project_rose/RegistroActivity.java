@@ -1,5 +1,6 @@
 package com.example.kevm.project_rose;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -29,7 +30,7 @@ public class RegistroActivity extends AppCompatActivity implements View.OnClickL
 
     private Button registro_conf;
     private EditText reg_usuario, reg_mail, reg_contraseña;
-    String url;
+    String url, respuesta;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,14 +56,21 @@ public class RegistroActivity extends AppCompatActivity implements View.OnClickL
             }
 
             else {
-                JsonObjectRequest peticion = new JsonObjectRequest(
+                final JsonObjectRequest peticion = new JsonObjectRequest(
                         Request.Method.GET,
                         url,
                         null,
                         new Response.Listener<JSONObject>() {
                             @Override
                             public void onResponse(JSONObject response) {
-                                //No se hace nada
+                                try {
+                                    respuesta = response.getString("resultado");
+                                    Toast.makeText(RegistroActivity.this, "" + respuesta, Toast.LENGTH_SHORT).show();
+                                    Intent intent = new Intent(RegistroActivity.this, InicioDeSesionActivity.class);
+                                    startActivity(intent);
+                                } catch (JSONException e) {
+                                    e.printStackTrace();
+                                }
                             }
                         },
                         new Response.ErrorListener() {
