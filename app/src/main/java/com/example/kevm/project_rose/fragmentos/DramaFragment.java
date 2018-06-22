@@ -9,9 +9,7 @@ import android.support.v7.widget.CardView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.GridLayout;
-import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -28,17 +26,18 @@ import com.example.kevm.project_rose.pelicula;
 import org.json.JSONArray;
 import org.json.JSONException;
 
+
 /**
  * A simple {@link Fragment} subclass.
  */
-public class PrincipalFragment extends Fragment {
+public class DramaFragment extends Fragment {
     String categoria;
     GridLayout mainGrid;
-    TextView pelicula1,pelicula2,pelicula3,pelicula4,pelicula5;
+    TextView pelicula1,pelicula2,pelicula3,pelicula4,pelicula5, catalogo_nombre;
     String peli1,peli2,peli3,peli4,peli5,fecha1,fecha2,fecha3,fecha4,fecha5,sinopsis1,sinopsis2,sinopsis3,sinopsis4,sinopsis5,reparto1,reparto2,reparto3,reparto4,reparto5,clave1,clave2,clave3,clave4,clave5;
     private GridLayout singleEvent;
 
-    public PrincipalFragment() {
+    public DramaFragment() {
         // Required empty public constructor
     }
 
@@ -46,17 +45,22 @@ public class PrincipalFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_principal, container, false);
+        View view = inflater.inflate(R.layout.fragment_drama, container, false);
 
-        pelicula1= (TextView) view.findViewById(R.id.pelicula1_pf);
-        pelicula2= (TextView) view.findViewById(R.id.pelicula2_pf);
-        pelicula3= (TextView) view.findViewById(R.id.pelicula3_pf);
-        pelicula4= (TextView) view.findViewById(R.id.pelicula4_pf);
-        pelicula5= (TextView) view.findViewById(R.id.pelicula5_pf);
+        Bundle bundle = getArguments();
+        categoria = bundle.getString("categoria");
+        catalogo_nombre = (TextView) view.findViewById(R.id.textView_dr);
+        catalogo_nombre.setText(categoria);
 
-        mainGrid = view.findViewById(R.id.mainGrid);
+        pelicula1= (TextView) view.findViewById (R.id.pelicula1_dr);
+        pelicula2= (TextView) view.findViewById (R.id.pelicula2_dr);
+        pelicula3= (TextView) view.findViewById (R.id.pelicula3_dr);
+        pelicula4= (TextView) view.findViewById (R.id.pelicula4_dr);
+        pelicula5= (TextView) view.findViewById (R.id.pelicula5_dr);
+
+        mainGrid = (GridLayout) view.findViewById(R.id.mainGrid);
         setSingleEvent(mainGrid);
-        String url  = "http://192.168.71.2/peliculas.php";
+        String url  = "http://192.168.71.2/catalogo2.php?genero=" + categoria;
 
         JsonArrayRequest peticion = new JsonArrayRequest
                 (
@@ -84,7 +88,7 @@ public class PrincipalFragment extends Fragment {
                                     fecha2=(response.getJSONObject(1).getString("Fecha de estreno2"));
                                     fecha3=(response.getJSONObject(2).getString("Fecha de estreno3"));
                                     fecha4=(response.getJSONObject(3).getString("Fecha de estreno4"));
-                                    fecha4=(response.getJSONObject(4).getString("Fecha de estreno5"));
+                                    fecha5=(response.getJSONObject(4).getString("Fecha de estreno5"));
                                     sinopsis1=(response.getJSONObject(0).getString("Sinopsis1"));
                                     sinopsis2=(response.getJSONObject(1).getString("Sinopsis2"));
                                     sinopsis3=(response.getJSONObject(2).getString("Sinopsis3"));
@@ -126,58 +130,56 @@ public class PrincipalFragment extends Fragment {
             CardView cardView=(CardView)mainGrid.getChildAt(i);
             final int finali=i;
             cardView.setOnClickListener(new View.OnClickListener(){
-                                            @Override
-                                            public void onClick(View view){
-                                                if(finali==0) {
-                                                    Intent intent= new Intent (getActivity(), pelicula.class);
-                                                    intent.putExtra("nombre_pelicula", peli1);
-                                                    intent.putExtra("fecha", fecha1);
-                                                    intent.putExtra("sinopsis", sinopsis1);
-                                                    intent.putExtra("reparto", reparto1);
-                                                    intent.putExtra("clave", clave1);
-                                                    startActivity(intent);
-                                                }else if(finali==1) {
-                                                    Intent intent= new Intent (getActivity(), pelicula.class);
-                                                    intent.putExtra("nombre_pelicula", peli2);
-                                                    intent.putExtra("fecha", fecha2);
-                                                    intent.putExtra("sinopsis", sinopsis2);
-                                                    intent.putExtra("reparto", reparto2);
-                                                    intent.putExtra("clave", clave2);
-                                                    startActivity(intent);
-                                                }else if(finali==2) {
-                                                    Intent intent= new Intent (getActivity(), pelicula.class);
-                                                    intent.putExtra("nombre_pelicula", peli3);
-                                                    intent.putExtra("fecha", fecha3);
-                                                    intent.putExtra("sinopsis", sinopsis3);
-                                                    intent.putExtra("reparto", reparto3);
-                                                    intent.putExtra("clave", clave3);
-                                                    startActivity(intent);
-                                                }else if(finali==3) {
-                                                    Intent intent= new Intent (getActivity(), pelicula.class);
-                                                    intent.putExtra("nombre_pelicula", peli4);
-                                                    intent.putExtra("fecha", fecha4);
-                                                    intent.putExtra("sinopsis", sinopsis4);
-                                                    intent.putExtra("reparto", reparto4);
-                                                    intent.putExtra("clave", clave4);
-                                                    startActivity(intent);
-                                                }else if(finali==4) {
-                                                    Intent intent= new Intent (getActivity(), pelicula.class);
-                                                    intent.putExtra("nombre_pelicula", peli5);
-                                                    intent.putExtra("fecha", fecha5);
-                                                    intent.putExtra("sinopsis", sinopsis5);
-                                                    intent.putExtra("reparto", reparto5);
-                                                    intent.putExtra("clave", clave5);
-                                                    startActivity(intent);
-                                                }else{
-                                                    Toast.makeText(getActivity(), "pelicula no disponible",Toast.LENGTH_SHORT).show();
-                                                }
-                                            }
-                                        }
+                @Override
+                public void onClick(View view){
+                    if(finali==0) {
+                        Intent intent= new Intent (getActivity(), pelicula.class);
+                        intent.putExtra("nombre_pelicula", peli1);
+                        intent.putExtra("fecha", fecha1);
+                        intent.putExtra("sinopsis", sinopsis1);
+                        intent.putExtra("reparto", reparto1);
+                        intent.putExtra("clave", clave1);
+                        startActivity(intent);
+                    }else if(finali==1) {
+                        Intent intent= new Intent (getActivity(), pelicula.class);
+                        intent.putExtra("nombre_pelicula", peli2);
+                        intent.putExtra("fecha", fecha2);
+                        intent.putExtra("sinopsis", sinopsis2);
+                        intent.putExtra("reparto", reparto2);
+                        intent.putExtra("clave", clave2);
+                        startActivity(intent);
+                    }else if(finali==2) {
+                        Intent intent= new Intent (getActivity(), pelicula.class);
+                        intent.putExtra("nombre_pelicula", peli3);
+                        intent.putExtra("fecha", fecha3);
+                        intent.putExtra("sinopsis", sinopsis3);
+                        intent.putExtra("reparto", reparto3);
+                        intent.putExtra("clave", clave3);
+                        startActivity(intent);
+                    }else if(finali==3) {
+                        Intent intent= new Intent (getActivity(), pelicula.class);
+                        intent.putExtra("nombre_pelicula", peli4);
+                        intent.putExtra("fecha", fecha4);
+                        intent.putExtra("sinopsis", sinopsis4);
+                        intent.putExtra("reparto", reparto4);
+                        intent.putExtra("clave", clave4);
+                        startActivity(intent);
+                    }else if(finali==4) {
+                        Intent intent= new Intent (getActivity(), pelicula.class);
+                        intent.putExtra("nombre_pelicula", peli5);
+                        intent.putExtra("fecha", fecha5);
+                        intent.putExtra("sinopsis", sinopsis5);
+                        intent.putExtra("reparto", reparto5);
+                        intent.putExtra("clave", clave5);
+                        startActivity(intent);
+                    }else{
+                        Toast.makeText(getActivity(), "pelicula no disponible",Toast.LENGTH_SHORT).show();
+                        }
+                }
+            }
             );
         }
 
 
     }
-
-
 }

@@ -14,6 +14,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.example.kevm.project_rose.fragmentos.DramaFragment;
 import com.example.kevm.project_rose.fragmentos.NuevoFragment;
 import com.example.kevm.project_rose.fragmentos.PrincipalFragment;
 import com.example.kevm.project_rose.fragmentos.RecomendadoFragment;
@@ -98,44 +99,74 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         if(id == R.id.Drama)
         {
-            Intent categoria = new Intent(MainActivity.this, catalogo.class);
-            categoria.putExtra("nombre_categoria", "drama");
-            startActivity(categoria);
+            boton1.setTextColor(getResources().getColor(R.color.white));
+            boton2.setTextColor(getResources().getColor(R.color.white));
+            boton3.setTextColor(getResources().getColor(R.color.white));
+            DramaFragment frag = new DramaFragment();
+            Bundle bundle = new Bundle();
+            bundle.putString("categoria", "drama");
+            frag.setArguments(bundle);
+            getSupportFragmentManager().beginTransaction().replace(R.id.Contenido,frag).commit();
         }
 
         if(id== R.id.Accion)
         {
-            Intent categoria = new Intent(MainActivity.this, catalogo.class);
-            categoria.putExtra("nombre_categoria", "accion");
-            startActivity(categoria);
+            boton1.setTextColor(getResources().getColor(R.color.white));
+            boton2.setTextColor(getResources().getColor(R.color.white));
+            boton3.setTextColor(getResources().getColor(R.color.white));
+            DramaFragment frag = new DramaFragment();
+            Bundle bundle = new Bundle();
+            bundle.putString("categoria", "accion");
+            frag.setArguments(bundle);
+            getSupportFragmentManager().beginTransaction().replace(R.id.Contenido,frag).commit();
         }
 
         if(id== R.id.Terror)
         {
-            Intent categoria = new Intent(MainActivity.this, catalogo.class);
-            categoria.putExtra("nombre_categoria", "terror");
-            startActivity(categoria);
+            boton1.setTextColor(getResources().getColor(R.color.white));
+            boton2.setTextColor(getResources().getColor(R.color.white));
+            boton3.setTextColor(getResources().getColor(R.color.white));
+            DramaFragment frag = new DramaFragment();
+            Bundle bundle = new Bundle();
+            bundle.putString("categoria", "terror");
+            frag.setArguments(bundle);
+            getSupportFragmentManager().beginTransaction().replace(R.id.Contenido,frag).commit();
         }
 
         if(id== R.id.Thriller)
         {
-            Intent categoria = new Intent(MainActivity.this, catalogo.class);
-            categoria.putExtra("nombre_categoria", "thriller");
-            startActivity(categoria);
+            boton1.setTextColor(getResources().getColor(R.color.white));
+            boton2.setTextColor(getResources().getColor(R.color.white));
+            boton3.setTextColor(getResources().getColor(R.color.white));
+            DramaFragment frag = new DramaFragment();
+            Bundle bundle = new Bundle();
+            bundle.putString("categoria", "thriller");
+            frag.setArguments(bundle);
+            getSupportFragmentManager().beginTransaction().replace(R.id.Contenido,frag).commit();
         }
 
         if(id== R.id.Comedia)
         {
-            Intent categoria = new Intent(MainActivity.this, catalogo.class);
-            categoria.putExtra("nombre_categoria", "comedia");
-            startActivity(categoria);
+            boton1.setTextColor(getResources().getColor(R.color.white));
+            boton2.setTextColor(getResources().getColor(R.color.white));
+            boton3.setTextColor(getResources().getColor(R.color.white));
+            DramaFragment frag = new DramaFragment();
+            Bundle bundle = new Bundle();
+            bundle.putString("categoria", "comedia");
+            frag.setArguments(bundle);
+            getSupportFragmentManager().beginTransaction().replace(R.id.Contenido,frag).commit();
         }
 
         if(id== R.id.CienciaFiccion)
         {
-            Intent categoria = new Intent(MainActivity.this, catalogo.class);
-            categoria.putExtra("nombre_categoria", "ciencia ficcion");
-            startActivity(categoria);
+            boton1.setTextColor(getResources().getColor(R.color.white));
+            boton2.setTextColor(getResources().getColor(R.color.white));
+            boton3.setTextColor(getResources().getColor(R.color.white));
+            DramaFragment frag = new DramaFragment();
+            Bundle bundle = new Bundle();
+            bundle.putString("categoria", "ciencia ficcion");
+            frag.setArguments(bundle);
+            getSupportFragmentManager().beginTransaction().replace(R.id.Contenido,frag).commit();
         }
 
         if(id == R.id.Historial)

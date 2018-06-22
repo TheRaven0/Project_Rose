@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
 
-    tools:context=".fragmentos.PrincipalFragment">
+    tools:context=".fragmentos.DramaFragment">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -23,7 +23,7 @@
                 android:textSize="20sp"
                 android:text="catalogo"
                 android:layout_centerInParent="true"
-                android:id="@+id/textView_pf" />
+                android:id="@+id/textView_dr" />
 
         </RelativeLayout>
 
@@ -65,7 +65,7 @@
                         android:layout_height="wrap_content"
                         android:text="pelicula"
                         android:textAlignment="center"
-                        android:id="@+id/pelicula1_pf"
+                        android:id="@+id/pelicula1_dr"
                         android:textSize="12sp" />
 
                 </LinearLayout>
@@ -98,7 +98,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="pelicula"
-                        android:id="@+id/pelicula2_pf"
+                        android:id="@+id/pelicula2_dr"
                         android:textAlignment="center"
                         android:textSize="12sp" />
 
@@ -131,7 +131,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="pelicula"
-                        android:id="@+id/pelicula3_pf"
+                        android:id="@+id/pelicula3_dr"
                         android:textAlignment="center"
                         android:textSize="12sp" />
 
@@ -162,7 +162,7 @@
                         android:src="@drawable/amelia" />
 
                     <TextView
-                        android:id="@+id/pelicula4_pf"
+                        android:id="@+id/pelicula4_dr"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="pelicula"
@@ -198,7 +198,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="pelicula"
-                        android:id="@+id/pelicula5_pf"
+                        android:id="@+id/pelicula5_dr"
                         android:textAlignment="center"
                         android:textSize="12sp" />
 
@@ -232,7 +232,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="pelicula"
-                        android:id="@+id/pelicula6_pf"
+                        android:id="@+id/pelicula6_dr"
                         android:textAlignment="center"
                         android:textSize="12sp" />
 
