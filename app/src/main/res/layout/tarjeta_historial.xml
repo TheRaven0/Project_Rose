@@ -3,12 +3,12 @@
     android:layout_height="wrap_content"
     android:layout_width="match_parent"
     android:orientation="horizontal"
-    android:id="@+id/historial">
+    android:id="@+id/historial_tarjeta">
     <ImageView
         android:layout_width="120dp"
         android:layout_height="120dp"
         android:src="@drawable/amelia"
-        android:id="@+id/poster"/>
+        android:id="@+id/poster_historial"/>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -17,21 +17,21 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Titulo"
-            android:id="@+id/titulo"/>
+            android:id="@+id/titulo_historial"/>
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Año"
-            android:id="@+id/año"/>
+            android:id="@+id/año_historial"/>
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Reparto"
-            android:id="@+id/reparto"/>
+            android:id="@+id/reparto_historial"/>
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Sinopsis"
-            android:id="@+id/sinopsis"/>
+            android:id="@+id/sinopsis_historial"/>
     </LinearLayout>
 </LinearLayout>

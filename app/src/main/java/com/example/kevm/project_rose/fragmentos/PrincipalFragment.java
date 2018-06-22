@@ -9,7 +9,9 @@ import android.support.v7.widget.CardView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.GridLayout;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -44,17 +46,19 @@ public class PrincipalFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
+        View view = inflater.inflate(R.layout.fragment_principal, container, false);
         categoria=getActivity().getIntent().getStringExtra("nombre_categoria");
-        // me caga android studio alch
-        pelicula1= getView().findViewById(R.id.pelicula1);
-        pelicula2= getView().findViewById(R.id.pelicula2);
-        pelicula3= getView().findViewById(R.id.pelicula3);
-        pelicula4= getView().findViewById(R.id.pelicula4);
-        pelicula5= getView().findViewById(R.id.pelicula5);
 
-        mainGrid = getView().findViewById(R.id.mainGrid);
+
+        pelicula1= (TextView) view.findViewById(R.id.pelicula1_pf);
+        pelicula2= (TextView) view.findViewById(R.id.pelicula2_pf);
+        pelicula3= (TextView) view.findViewById(R.id.pelicula3_pf);
+        pelicula4= (TextView) view.findViewById(R.id.pelicula4_pf);
+        pelicula5= (TextView) view.findViewById(R.id.pelicula5_pf);
+
+        mainGrid = view.findViewById(R.id.mainGrid);
         setSingleEvent(mainGrid);
-        String url  = "http://192.168.84.51/catalogo.php?"+categoria;
+        String url  = "http://192.168.84.51/peliculas.php";
 
         JsonArrayRequest peticion = new JsonArrayRequest
                 (
@@ -115,7 +119,7 @@ public class PrincipalFragment extends Fragment {
 
         x.add(peticion);
 
-        return inflater.inflate(R.layout.fragment_principal, container, false);
+        return view;
     }
 
     public void setSingleEvent(GridLayout singleEvent) {

@@ -35,7 +35,8 @@ public class catalogo extends AppCompatActivity {
         setContentView(R.layout.activity_catalogo);
 
         Intent receive = getIntent();
-        categoria = receive.getStringExtra("nombre_categoria");
+        //categoria = receive.getStringExtra("nombre_categoria");
+        categoria = "drama";
 
         pelicula1= (TextView) findViewById (R.id.pelicula1);
         pelicula2= (TextView) findViewById (R.id.pelicula2);
@@ -45,7 +46,7 @@ public class catalogo extends AppCompatActivity {
 
         mainGrid = (GridLayout) findViewById(R.id.mainGrid);
         setSingleEvent(mainGrid);
-        String url  = "http://192.168.84.51/catalogoV2.php?genero=" + categoria;
+        String url  = "http://192.168.84.51/catalogo2.php?genero=" + categoria;
 
         JsonArrayRequest peticion = new JsonArrayRequest
                 (

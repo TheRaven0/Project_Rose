@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
 
     tools:context="com.example.kevm.project_rose.catalogo">
-    // me caga android studio alch
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -66,7 +65,7 @@
                         android:layout_height="wrap_content"
                         android:text="pelicula"
                         android:textAlignment="center"
-                        android:id="@+id/pelicula1"
+                        android:id="@+id/pelicula1_pf"
                         android:textSize="12sp" />
 
                 </LinearLayout>
@@ -99,7 +98,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="pelicula"
-                        android:id="@+id/pelicula2"
+                        android:id="@+id/pelicula2_pf"
                         android:textAlignment="center"
                         android:textSize="12sp" />
 
@@ -132,7 +131,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="pelicula"
-                        android:id="@+id/pelicula3"
+                        android:id="@+id/pelicula3_pf"
                         android:textAlignment="center"
                         android:textSize="12sp" />
 
@@ -163,7 +162,7 @@
                         android:src="@drawable/amelia" />
 
                     <TextView
-                        android:id="@+id/pelicula4"
+                        android:id="@+id/pelicula4_pf"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="pelicula"
@@ -199,7 +198,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="pelicula"
-                        android:id="@+id/pelicula5"
+                        android:id="@+id/pelicula5_pf"
                         android:textAlignment="center"
                         android:textSize="12sp" />
 
@@ -233,7 +232,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="pelicula"
-                        android:id="@+id/pelicula6"
+                        android:id="@+id/pelicula6_pf"
                         android:textAlignment="center"
                         android:textSize="12sp" />
 
